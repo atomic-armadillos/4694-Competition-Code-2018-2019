@@ -14,6 +14,9 @@ import org.usfirst.frc.team4694.robot.subsystems.pneumatics;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.command.*;
+
+import org.usfirst.frc.team4694.robot.commands.armDeploy;
 import org.usfirst.frc.team4694.robot.subsystems.Climber;
 
 /**
@@ -30,6 +33,7 @@ public class Robot extends TimedRobot {
 	public static ExtendableClaw m_extendableclaw = new ExtendableClaw(); //Subsystem that controls the extendable claw
 	public static Climber m_climber = new Climber(); //Subsystem that controls the climber
 	public static DriveBase m_drivetrain = new DriveBase(); //Subsystem that controls the drivetrain
+	Command ArmSolenoid;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -39,6 +43,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() { //Void statement that runs once when the robot turns on
 		m_oi = new OI(); //Assigns the OI file a name that can be referenced elsewhere in the code
 		CameraServer.getInstance().startAutomaticCapture();
+		ArmSolenoid = new armDeploy();
 		
 	}
 
@@ -77,7 +82,7 @@ public class Robot extends TimedRobot {
 		 * = new MyAutoCommand(); break; case "Default Auto": default:
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
-
+		ArmSolenoid.start();
 		
 	}
 
