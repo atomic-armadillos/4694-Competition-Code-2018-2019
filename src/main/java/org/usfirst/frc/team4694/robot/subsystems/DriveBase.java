@@ -12,8 +12,11 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import org.usfirst.frc.team4694.robot.RobotMap;
 import org.usfirst.frc.team4694.robot.commands.DriveWithJoystick;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
+
 /**
  * Add your docs here.
  */
@@ -28,7 +31,8 @@ public class DriveBase extends Subsystem {
 
 	double minimumXThreshold = .25;
 	double minimumYThreshold = .25;
-	  
+	
+	public Gyro gyro = new AnalogGyro(1);
   	public Spark m_leftMotorFront = new Spark(RobotMap.frontleftMotor); //Defines the Spark motor controller for the front left motor
 	public Spark m_leftMotorRear = new Spark(RobotMap.rearleftMotor); //Defines the Spark motor controller for the rear left motor
 	public SpeedControllerGroup m_left = new SpeedControllerGroup(m_leftMotorFront, m_leftMotorRear); //Puts the previous 2 controllers into a controller group
