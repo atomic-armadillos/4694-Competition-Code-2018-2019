@@ -72,8 +72,10 @@ public class DriveBase extends Subsystem {
 		magnitudeInX = 0;
 	}
 		m_robotdrive.arcadeDrive(magnitudeInY * -1, magnitudeInX); //Sets the amount of power of each motor to the value of each Y-Axis on the Xbox Controller
-		m_testmotor.set(Joy.getRawAxis(5) * 0.5);
+		//m_testmotor.set(Joy.getRawAxis(5) * 0.5);
 		}
+
+		
   
   public void stop() { //Void Statement that stops the robot from moving
     	m_robotdrive.arcadeDrive(0, 0); //Sets the amount of each motor to zero

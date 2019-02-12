@@ -12,9 +12,9 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.*;
 import org.usfirst.frc.team4694.robot.commands.ToggleClaw;
 import org.usfirst.frc.team4694.robot.commands.ClimbClaw;
-import org.usfirst.frc.team4694.robot.commands.RaiseClimber;
-import org.usfirst.frc.team4694.robot.commands.lowerClimber;
-import org.usfirst.frc.team4694.robot.commands.StopClimber;
+// import org.usfirst.frc.team4694.robot.commands.RaiseClimber;
+// import org.usfirst.frc.team4694.robot.commands.lowerClimber;
+// import org.usfirst.frc.team4694.robot.commands.StopClimber;
 
 //import org.usfirst.frc.team4694.robot.commands.lowerClimber;
 /**
@@ -32,10 +32,10 @@ public class OI { //Contains mappings for the joystick and all joystick buttons
 	public OI() { //Defines buttons and the commands they are assigned to
 		 X.whenPressed(new ToggleClaw()); //When button X is pressed, run command ToggleClaw
 		 B.whenPressed(new ClimbClaw()); //When button B is pressed, run command ClimbClaw
-		 LB.whenPressed(new RaiseClimber()); //When button LB is pressed, run command RaiseClimber
-		 RB.whenPressed(new lowerClimber()); //When button RB is pressed, run command lowerClimber
-		 LB.whenReleased(new StopClimber()); //When button LB is released, run command Stop Climber
-		 RB.whenReleased(new StopClimber()); //When button RB is released, run command Stop Climber
+		// LB.whenPressed(new RaiseClimber()); //When button LB is pressed, run command RaiseClimber
+		// RB.whenPressed(new lowerClimber()); //When button RB is pressed, run command lowerClimber
+		// LB.whenReleased(new StopClimber()); //When button LB is released, run command Stop Climber
+		// RB.whenReleased(new StopClimber()); //When button RB is released, run command Stop Climber
 	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
