@@ -27,7 +27,8 @@ public class RobotMap { //Defines all ports for motor controllers, sensors, etc.
 	public static int compressor = 0; //Sets the compressor to CAN port 0
 	public static int ClawSolenoid = 0; //Sets the Claw Solenoid to port 0
 	public static int ClimbSolenoid = 1; //Sets the Climb Solenoid to port 1
-	public static int armSolenoid = 2; // Sets the arm elevation solenoid to port 2
+	public static int ClimbSolenoidRight = 2; // Sets the Right Climb Solenoid to port 2
+	public static int armSolenoid = 3; // Sets the arm elevation solenoid to port 3
 	public static int elevatorEncoderA = 2; //Sets the elevator Encoder to DIO port 0;
 	public static int elevatorEncoderB = 3; //Sets the elevator Encoder to DIO port 1;
 	// For example to map the left and right motors, you could define the

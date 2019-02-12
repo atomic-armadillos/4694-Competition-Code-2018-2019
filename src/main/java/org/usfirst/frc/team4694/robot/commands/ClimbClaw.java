@@ -26,7 +26,7 @@ public class ClimbClaw extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_climber.climbClaw(Robot.m_climber.m_climberSolenoid); //Runs the climbCloseClaw void statement in the Climber subsystem
+    Robot.m_climber.climbClaw(Robot.m_climber.m_climberSolenoid, Robot.m_climber.m_climberSolenoidRight); //Runs the climbCloseClaw void statement in the Climber subsystem
   }
 
   // Make this return true when this Command no longer needs to run execute()

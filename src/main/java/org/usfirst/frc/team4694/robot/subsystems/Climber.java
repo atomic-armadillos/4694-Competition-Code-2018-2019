@@ -24,7 +24,7 @@ public class Climber extends Subsystem {
   public Spark m_climberMotorRight = new Spark(RobotMap.climberMotorLeft); //Defines the right climber motor controller
   public Spark m_climberMotorLeft = new Spark(RobotMap.climberMotorRight); //Defines the left climber motor controller
   public Solenoid m_climberSolenoid = new Solenoid(RobotMap.ClimbSolenoid); //Defines the climber solenoid
-
+  public Solenoid m_climberSolenoidRight = new Solenoid(RobotMap.ClimbSolenoidRight); // Deines the right Climber solenoid
   @Override
   public void initDefaultCommand() {
     
@@ -47,12 +47,15 @@ public class Climber extends Subsystem {
     m_climberMotorLeft.set(-0.5); //Sets the left climber motor in reverse at half power
   }
 
-  public void climbClaw(Solenoid Sol) {
-    if (Sol.get() == true) {
-        Sol.set(false);
+  public void climbClaw(Solenoid Sol1, Solenoid Sol2) {
+    if (Sol1.get() == true && Sol2.get() == true) {
+        Sol1.set(false);
+        Sol2.set(false);
       }
-      else if (Sol.get() == false) {
-        Sol.set(true);
+      else if (Sol2.get() == false && Sol1.get() == false) {
+        Sol2.set(true);
+        Sol1.set(true);
       }
+
   }
 }
