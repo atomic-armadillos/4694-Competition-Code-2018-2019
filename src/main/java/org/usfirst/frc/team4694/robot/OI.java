@@ -31,7 +31,6 @@ public class OI { //Contains mappings for the joystick and all joystick buttons
 
 	public OI() { //Defines buttons and the commands they are assigned to
 		 X.whenPressed(new ToggleClaw()); //When button X is pressed, run command OpenClaw
-		 //A.whenPressed(new CloseClaw()); //When button A is pressed, run command CloseClaw
 		 B.whenPressed(new ClimbClaw()); //When button B is pressed, run command ClimbCloseClaw
 		// LB.whenPressed(new RaiseClimber()); //When button LB is pressed, run command RaiseClimber
 		// RB.whenPressed(new lowerClimber()); //When button RB is pressed, run command lowerClimber
