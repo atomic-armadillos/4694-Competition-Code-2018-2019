@@ -48,12 +48,12 @@ public class Climber extends Subsystem {
   }
 
   public void climbClaw(Solenoid Sol1, Solenoid Sol2) {
-    if (Sol1.get() == true && Sol2.get() == true) {
-        Sol1.set(false);
+    if (Sol1.get() == true && Sol2.get() == true) {//if both solenoids are extended when the button is pressed
+        Sol1.set(false);//set both solenoids to collapsed
         Sol2.set(false);
       }
-      else if (Sol2.get() == false && Sol1.get() == false) {
-        Sol2.set(true);
+      else if (Sol2.get() == false && Sol1.get() == false) {//if both solenoids are collapsed when the button is pressed
+        Sol2.set(true);//set both solenoids to extended 
         Sol1.set(true);
       }
 

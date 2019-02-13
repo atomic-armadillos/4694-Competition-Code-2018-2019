@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
 /**
  * Add your docs here.
  */
+//toggles the claw from closed to open, and vise versa
 public class ClawToggle extends Trigger {
   private Joystick Joy;
   private int Button;

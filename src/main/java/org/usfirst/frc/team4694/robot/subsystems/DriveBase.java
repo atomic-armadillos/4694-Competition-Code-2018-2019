@@ -67,7 +67,7 @@ public class DriveBase extends Subsystem {
 	magnitudeInY = Joy.getRawAxis(1);
 	magnitudeInX = Joy.getRawAxis(0);
 
-
+//makes sure the controller used is not so "jumpy"
 	if(Math.abs(magnitudeInY) <= minimumYThreshold) {
 		magnitudeInY = 0;
 	}
