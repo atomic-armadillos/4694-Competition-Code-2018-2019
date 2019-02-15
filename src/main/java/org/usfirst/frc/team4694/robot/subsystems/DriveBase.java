@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import org.usfirst.frc.team4694.robot.RobotMap;
 import org.usfirst.frc.team4694.robot.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.smartdashboard.*;
 
 /**
  * Add your docs here.
@@ -28,9 +29,10 @@ public class DriveBase extends Subsystem {
   
   	public double magnitudeRtX;
 	public double magnitudeRtY;
+	public double gyroAngle;
 
-	double minimumXThreshold = .25;
-	double minimumYThreshold = .25;
+	double minimumXThreshold = .1; // both of these used to say 0.25 before, incase this fails.
+	double minimumYThreshold = .1;
 	
 	public Gyro gyro = new AnalogGyro(1);
   	public Spark m_leftMotorFront = new Spark(RobotMap.frontleftMotor); //Defines the Spark motor controller for the front left motor
@@ -53,6 +55,9 @@ public class DriveBase extends Subsystem {
 		addChild("Rear Left Motor", (Spark) m_leftMotorRear); //Adds Rear Left Motor to the LiveWindow
 		addChild("Rear Right Motor", (Spark) m_rightMotorRear); //Adds Rear Right Motor to the LiveWindow
 
+		gyroAngle = gyro.getAngle();
+		SmartDashboard.putNumber("Gyro", gyroAngle);
+
 		m_testmotor.setSafetyEnabled(true);
 		m_testmotor.setExpiration(0.1);
 
@@ -67,7 +72,7 @@ public class DriveBase extends Subsystem {
 	magnitudeInY = Joy.getRawAxis(1);
 	magnitudeInX = Joy.getRawAxis(0);
 
-
+//makes sure the controller used is not so "jumpy"
 	if(Math.abs(magnitudeInY) <= minimumYThreshold) {
 		magnitudeInY = 0;
 	}
@@ -75,10 +80,15 @@ public class DriveBase extends Subsystem {
 	if(Math.abs(magnitudeInX) <= minimumYThreshold) {
 		magnitudeInX = 0;
 	}
-		m_robotdrive.arcadeDrive(magnitudeInY * -1, magnitudeInX); //Sets the amount of power of each motor to the value of each Y-Axis on the Xbox Controller
+		m_robotdrive.arcadeDrive(magnitudeInY, magnitudeInX * -1); //Sets the amount of power of each motor to the value of each Y-Axis on the Xbox Controller
 		//m_testmotor.set(Joy.getRawAxis(5) * 0.5);
 		}
-
+		/*
+		// This is the other alternate solution for the "Jumpiness"
+		m_robotdrive.arcadeDrive(magnitudeInY * -1 - 0.24, magnitudeInX - 0.24); //Sets the amount of power of each motor to the value of each Y-Axis on the Xbox Controller
+		//m_testmotor.set(Joy.getRawAxis(5) * 0.5);
+		}
+		*/
 		
   
   public void stop() { //Void Statement that stops the robot from moving

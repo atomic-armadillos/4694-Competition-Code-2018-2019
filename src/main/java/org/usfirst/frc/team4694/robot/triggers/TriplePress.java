@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
  * A custom button that is triggered when two buttons on a Joystick are
  * simultaneously pressed.
  */
+//can be called for use in another program if the amount of buttons are two small
 public class TriplePress extends Trigger {
 	private Joystick m_joy;
 	private int m_button1;
