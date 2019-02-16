@@ -34,7 +34,8 @@
 //     else {
 //       compressor.stop(); //Stop the compressor
 //     }
-//     SmartDashboard.putBoolean("Compressor Status", compressor.getPressureSwitchValue());//Outputs the status for the compressor to Dashboard
+//     SmartDashboard.putBoolean("Compressor Status", compressor.getPressureSwitchValue()); //Outputs the status for the compressor to Dashboard
+
 //   }
 //   public void TurnoffCompressor() {
 //     compressor.stop(); //Stop the compressor

@@ -36,6 +36,29 @@
 //     setDefaultCommand(new ElevatorSetpoint());
 //   }
 
+// import org.usfirst.frc.team4694.robot.commands.ElevatorSetpoint;
+// import edu.wpi.first.wpilibj.Solenoid;
+// import edu.wpi.first.wpilibj.Encoder;
+
+// /**
+//  * Add your docs here.
+//  */
+// public class ExtendableClaw extends Subsystem {
+//   // Put methods for controlling this subsystem
+//   // here. Call these from Commands.
+//   public Spark m_elevatorMotor = new Spark(RobotMap.extendablecableMotor); //Defines the elevator motor controller
+//   public Spark m_elevatortiltMotor = new Spark(RobotMap.pivotarmMotor); //Defines the pivot motor controller
+//   public Solenoid m_ClawSolenoid = new Solenoid(RobotMap.ClawSolenoid); //Defines the claw solenoid
+//   public Encoder m_elevatorEncoder = new Encoder(RobotMap.elevatorEncoderA, RobotMap.elevatorEncoderB);//Defines the elevator encoder
+//   public Solenoid m_armSolenoid = new Solenoid(RobotMap.armSolenoid);
+
+//   @Override
+//   public void initDefaultCommand() {
+//     // Set the default command for a subsystem here.
+//     // setDefaultCommand(new MySpecialCommand());
+//     setDefaultCommand(new ElevatorSetpoint());
+//   }
+
 //   public void ExtendableClaw() {
 //     m_elevatorMotor.setSafetyEnabled(true); //Turns on the safety for the elevator motor controller
 //     m_elevatorMotor.setExpiration(0.1); //Sets the expiration for the elevator motor controller to 0.1 seconds
