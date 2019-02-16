@@ -56,7 +56,7 @@ public class DriveBase extends Subsystem {
 		addChild("Rear Right Motor", (Spark) m_rightMotorRear); //Adds Rear Right Motor to the LiveWindow
 
 		gyroAngle = gyro.getAngle();
-		SmartDashboard.putNumber("Gyro", gyroAngle);
+		SmartDashboard.putNumber("Gyro", gyroAngle);//outputs the angle of direction to smart dashboard
 
 		m_testmotor.setSafetyEnabled(true);
 		m_testmotor.setExpiration(0.1);

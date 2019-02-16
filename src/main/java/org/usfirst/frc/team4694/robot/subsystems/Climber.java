@@ -9,6 +9,9 @@
 
 // import edu.wpi.first.wpilibj.RobotController;
 // import edu.wpi.first.wpilibj.command.Subsystem;
+
+// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 // import edu.wpi.first.wpilibj.XboxController;
 // import org.usfirst.frc.team4694.robot.RobotMap;
 // import edu.wpi.first.wpilibj.Spark;
@@ -56,6 +59,8 @@
 //         Sol2.set(true);//set both solenoids to extended 
 //         Sol1.set(true);
 //       }
+//        SmartDashboard.putBoolean("Right Climber Solenoid", Sol1.get());//put the status of the right solenoid
+//        SmartDashboard.putBoolean("Left Climber Solenoid", Sol2.get());//put the status of the left solenoid
 
 //   }
 // }
