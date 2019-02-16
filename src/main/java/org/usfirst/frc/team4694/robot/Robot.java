@@ -7,17 +7,17 @@
 
 package org.usfirst.frc.team4694.robot;
 
-import org.usfirst.frc.team4694.robot.subsystems.ExtendableClaw;
+//import org.usfirst.frc.team4694.robot.subsystems.ExtendableClaw;
 import org.usfirst.frc.team4694.robot.subsystems.DriveBase;
-import org.usfirst.frc.team4694.robot.subsystems.pneumatics;
+//import org.usfirst.frc.team4694.robot.subsystems.pneumatics;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.command.*;
 
-import org.usfirst.frc.team4694.robot.commands.armDeploy;
-import org.usfirst.frc.team4694.robot.subsystems.Climber;
+//import org.usfirst.frc.team4694.robot.commands.armDeploy;
+//import org.usfirst.frc.team4694.robot.subsystems.Climber;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,11 +29,11 @@ import org.usfirst.frc.team4694.robot.subsystems.Climber;
 public class Robot extends TimedRobot {
 	public static OI m_oi; //Defines the OI file
 	
-	public static pneumatics Pneumatics = new pneumatics(); //Subsystem that controls the compressor
-	public static ExtendableClaw m_extendableclaw = new ExtendableClaw(); //Subsystem that controls the extendable claw
-	public static Climber m_climber = new Climber(); //Subsystem that controls the climber
+	//public static pneumatics Pneumatics = new pneumatics(); //Subsystem that controls the compressor
+	//public static ExtendableClaw m_extendableclaw = new ExtendableClaw(); //Subsystem that controls the extendable claw
+	//public static Climber m_climber = new Climber(); //Subsystem that controls the climber
 	public static DriveBase m_drivetrain = new DriveBase(); //Subsystem that controls the drivetrain
-	Command ArmSolenoid;
+	//Command ArmSolenoid;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -43,7 +43,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() { //Void statement that runs once when the robot turns on
 		m_oi = new OI(); //Assigns the OI file a name that can be referenced elsewhere in the code
 		CameraServer.getInstance().startAutomaticCapture();
-		ArmSolenoid = new armDeploy();
+		//ArmSolenoid = new armDeploy();
 		
 	}
 
@@ -82,7 +82,8 @@ public class Robot extends TimedRobot {
 		 * = new MyAutoCommand(); break; case "Default Auto": default:
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
-		ArmSolenoid.start();
+		
+		 //ArmSolenoid.start();
 		
 	}
 
@@ -100,7 +101,8 @@ public class Robot extends TimedRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-	
+		
+		//ArmSolenoid.start();
 	}
 
 	/**
