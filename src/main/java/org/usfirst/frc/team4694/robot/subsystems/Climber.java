@@ -9,11 +9,12 @@ package org.usfirst.frc.team4694.robot.subsystems;
 
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 import org.usfirst.frc.team4694.robot.RobotMap;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 
 /**
@@ -24,8 +25,8 @@ public class Climber extends Subsystem {
   // here. Call these from Commands.
   public Spark m_climberMotorRight = new Spark(RobotMap.climberMotorLeft); //Defines the right climber motor controller
   public Spark m_climberMotorLeft = new Spark(RobotMap.climberMotorRight); //Defines the left climber motor controller
-  public Solenoid m_climberSolenoid = new Solenoid(RobotMap.ClimbSolenoid); //Defines the climber solenoid
-  public Solenoid m_climberSolenoidRight = new Solenoid(RobotMap.ClimbSolenoidRight); // Deines the right Climber solenoid
+  public DoubleSolenoid m_climberSolenoid = new DoubleSolenoid(1, 4); //Defines the climber solenoid
+
   @Override
   public void initDefaultCommand() {
     
@@ -48,16 +49,13 @@ public class Climber extends Subsystem {
     m_climberMotorLeft.set(-0.5); //Sets the left climber motor in reverse at half power
   }
 
-  public void climbClaw(Solenoid Sol1, Solenoid Sol2) {
-    if (Sol1.get() == true && Sol2.get() == true) {//if both solenoids are extended when the button is pressed
-        Sol1.set(false);//set both solenoids to collapsed
-        Sol2.set(false);
+  public void climbClaw(DoubleSolenoid Sol) {
+    if (Sol.get() == Value.kForward) {
+        Sol.set(Value.kReverse);
+        
       }
-      else if (Sol2.get() == false && Sol1.get() == false) {//if both solenoids are collapsed when the button is pressed
-        Sol2.set(true);//set both solenoids to extended 
-        Sol1.set(true);
+      else if (Sol.get() == Value.kReverse) {
+        Sol.set(Value.kForward);
       }
-       SmartDashboard.putBoolean("Right Climber Solenoid", Sol1.get());//put the status of the right solenoid
-       SmartDashboard.putBoolean("Left Climber Solenoid", Sol2.get());//put the status of the left solenoid
   }
 }

@@ -11,11 +11,11 @@ import org.usfirst.frc.team4694.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ClimbClaw extends Command {
-  public ClimbClaw() {
+public class Outtake extends Command {
+  public Outtake() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_climber);
+    requires(Robot.m_shooter);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class ClimbClaw extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_climber.climbClaw(Robot.m_climber.m_climberSolenoid); //Runs the climbCloseClaw void statement in the Climber subsystem
+    Robot.m_shooter.outtake();
   }
 
   // Make this return true when this Command no longer needs to run execute()
