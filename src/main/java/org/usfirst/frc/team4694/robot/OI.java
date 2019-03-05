@@ -10,16 +10,15 @@ package org.usfirst.frc.team4694.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.*;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import org.usfirst.frc.team4694.robot.commands.ToggleClaw;
-  import org.usfirst.frc.team4694.robot.commands.ClimbClaw;
-  import org.usfirst.frc.team4694.robot.commands.RaiseClimber;
-  import org.usfirst.frc.team4694.robot.commands.lowerClimber;
-  import org.usfirst.frc.team4694.robot.commands.StopClimber;
-  import org.usfirst.frc.team4694.robot.commands.ShootForward;
-  import org.usfirst.frc.team4694.robot.commands.Intake;
 
+import org.usfirst.frc.team4694.robot.commands.ToggleClaw;
+import org.usfirst.frc.team4694.robot.commands.ClimbClaw;
+import org.usfirst.frc.team4694.robot.commands.RaiseClimber;
+import org.usfirst.frc.team4694.robot.commands.lowerClimber;
+import org.usfirst.frc.team4694.robot.commands.StopClimber;
+import org.usfirst.frc.team4694.robot.commands.DriveWithJoystick;
+import org.usfirst.frc.team4694.robot.commands.*;
 //import org.usfirst.frc.team4694.robot.commands.lowerClimber;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,21 +29,20 @@ public class OI { //Contains mappings for the joystick and all joystick buttons
 	Button X = new JoystickButton(m_joystick, 3); //Sets button X to button 3 on the joystick
 	Button A = new JoystickButton(m_joystick, 1); //Sets button A to button 1 on the joystick
 	Button B = new JoystickButton(m_joystick, 2); //Sets button B to button 2 on the joystick
-	Button Y = new JoystickButton(m_joystick, 4);
 	Button LB = new JoystickButton(m_joystick, 5); //Sets button LB to button 5 on the joystick
 	Button RB = new JoystickButton(m_joystick, 6); //Sets button RB to button 6 on the joystick
 
 	public OI() { //Defines buttons and the commands they are assigned to
-		//X.whenPressed(new ToggleClaw()); //When button X is pressed, run command OpenClaw
-		B.whenPressed(new ClimbClaw()); //When button B is pressed, run command ClimbCloseClaw
-		LB.whenPressed(new RaiseClimber()); //When button LB is pressed, run command RaiseClimber
-		RB.whenPressed(new lowerClimber()); //When button RB is pressed, run command lowerClimber
-		LB.whenReleased(new StopClimber()); //When button LB is released, run command Stop Climber
-		RB.whenReleased(new StopClimber()); //When button RB is released, run command Stop Climber
-		Y.whenPressed(new ShootForward());
-		X.whenPressed(new Intake());
+		 X.whenPressed(new Intake()); //When button X is pressed, run command ToggleClaw
+		 A.whenPressed(new Outtake()); //When button B is pressed, run command ClimbClaw
+		 LB.whenPressed(new RaiseClimber()); //When button LB is pressed, run command RaiseClimber
+		 RB.whenPressed(new lowerClimber()); //When button RB is pressed, run command lowerClimber
+		 LB.whenReleased(new StopClimber()); //When button LB is released, run command Stop Climber
+		 RB.whenReleased(new StopClimber()); //When button RB is released, run command Stop Climber
+
+		 SmartDashboard.putData("ToggleClaw", new ToggleClaw());
+		 SmartDashboard.putData("Drive With Joystick", new DriveWithJoystick());
 	}
-	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.

@@ -8,7 +8,6 @@
 package org.usfirst.frc.team4694.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Compressor;
 import org.usfirst.frc.team4694.robot.RobotMap;
 import org.usfirst.frc.team4694.robot.commands.FillAirTanks;
@@ -34,7 +33,7 @@ public class pneumatics extends Subsystem {
     else {
       compressor.stop(); //Stop the compressor
     }
-    SmartDashboard.putBoolean("Compressor Status", compressor.getPressureSwitchValue());//Outputs the status for the compressor to Dashboard
+
   }
   public void TurnoffCompressor() {
     compressor.stop(); //Stop the compressor

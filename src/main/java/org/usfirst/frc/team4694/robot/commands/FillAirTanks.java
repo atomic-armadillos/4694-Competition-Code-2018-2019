@@ -15,7 +15,7 @@ public class FillAirTanks extends Command {
   public FillAirTanks() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.Pneumatics);
+    requires(Robot.m_pneumatics);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class FillAirTanks extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.Pneumatics.FillAirTanks();
+    Robot.m_pneumatics.FillAirTanks();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -38,7 +38,7 @@ public class FillAirTanks extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.Pneumatics.TurnoffCompressor(); //Runs the TurnoffCompressor void statement in the pneumatics subsystem
+    Robot.m_pneumatics.TurnoffCompressor(); //Runs the TurnoffCompressor void statement in the pneumatics subsystem
   }
 
   // Called when another command which requires one or more of the same
