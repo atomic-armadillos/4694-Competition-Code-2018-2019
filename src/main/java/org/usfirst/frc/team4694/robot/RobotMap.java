@@ -20,15 +20,18 @@ public class RobotMap { //Defines all ports for motor controllers, sensors, etc.
 	public static int rearrightMotor = 1; //Sets the rear right motor controller to pwm port 1
 	public static int frontleftMotor = 2; //Sets the front left motor controller to pwm port 2
 	public static int rearleftMotor = 3; //Sets the rear left motor controller to pwm port 3
-	public static int extendablecableMotor = 4; //Sets the extendable cable motor controller to pwm port 4
-	public static int pivotarmMotor = 5; //Sets the pivot arm motor controller to pwm port 5
-	public static int climberMotorLeft = 6; // Sets the left climber motor controller to pwm 6
-	public static int climberMotorRight = 7; //Sets the right climber motor controller to pwm 7
+	public static int shooterMotorAngle = 6; //sets the angle motor of the shooter to pwm port 4
+	public static int shooterMotorWheel = 7; //Sets the left motor of the shooter to pwm port 5
+	//public static int shooterMotorRight = 4; // Sets the right motor of the shooter to pwm port 4
+	//public static int extendablecableMotor = 4; //Sets the extendable cable motor controller to pwm port 4
+	// static int pivotarmMotor = 5; //Sets the pivot arm motor controller to pwm port 5
+	public static int climberMotorLeft = 4; // Sets the left climber motor controller to pwm 6
+	public static int climberMotorRight = 5; //Sets the right climber motor controller to pwm 7
 	public static int compressor = 0; //Sets the compressor to CAN port 0
 	public static int ClawSolenoid = 0; //Sets the Claw Solenoid to port 0
 	public static int ClimbSolenoid = 1; //Sets the Climb Solenoid to port 1
 	public static int ClimbSolenoidRight = 2; // Sets the Right Climb Solenoid to port 2
-	public static int armSolenoid = 3; // Sets the arm elevation solenoid to port 3
+	//public static int armSolenoid = 3; // Sets the arm elevation solenoid to port 3
 	public static int elevatorEncoderA = 2; //Sets the elevator Encoder to DIO port 0;
 	public static int elevatorEncoderB = 3; //Sets the elevator Encoder to DIO port 1;
 	// For example to map the left and right motors, you could define the
